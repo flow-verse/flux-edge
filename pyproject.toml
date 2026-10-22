@@ -1,0 +1,13 @@
+[project]
+name = "flux-edge"
+version = "0.0.1"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+dependencies = ["numpy"]
+[project.optional-dependencies]
+dev = ["pytest"]
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -7,5 +7,8 @@ Edge service (target: NVIDIA Jetson Orin Nano, TensorRT FP16) that turns camera 
 - Only aggregates leave the device, e.g. `{"zone":"A","density":0.85,"energy":0.6}`.
 - Designed with biometric-privacy regimes (e.g. Saudi PDPL) in mind. **Get legal review before deploying**: whether aggregate-only processing falls outside a given law's scope is a legal question, not something this code can guarantee.
 
+## Sensors
+Prefer mmWave FMCW radar or non-identifying density estimation; avoid face-based methods. Run FP16 on Jetson (INT8 showed a 2.7x regression in one reported case).
+
 ## Pipeline
 camera/mmWave → density map (multi-column CNN / YOLO) → zone aggregation → OSC/MQTT → flux-host AI DJ controller
